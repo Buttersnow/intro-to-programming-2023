@@ -3,14 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="refresh" content="5">
+    <meta http-equiv="refresh" content="500">
     <title>Document</title>
-    
+    <link rel="stylesheet" href="style.css">
 </head>
-<style>body {background-color: rgb(53, 149, 228);}</style>
+<style>body {background-color: rgb(224, 231, 238);}</style>
 <body>
-   <h1>Welcome to my webpage</h1> 
-  
+   <h1 id="king">Welcome to my webpage</h1> 
 <section>
    <h2>About me:</h2>
     <p>I am Tilla... I am new to coding. I am learning how to code to build websites from scratch!</p> 
@@ -26,12 +25,32 @@
 <section>
     <h4>Connect:</h4>
     <a href="https://buttersnow.github.io/intro-to-programming-2023/">MY Webpage</a>
+
+
+<section> <! - comment/feedback input on the page->
+    <h2 id="comment_form">Leave a Message</h2>
+    <form name="leave_message">
+     <label>Name:</label><br>
+     <input type="text" name="usersName" required="true"><br>
+     <label>Email:</label><br>
+     <input type="email" name="usersEmail" required="true"><br>
+     <label>Add comment or feedback</label><br>
+     <textarea name="usersMessage" required="true"></textarea><br>
+     <button type="submit">Submit</button>
+    </form>
+</section>
+<section id="messages">
+    <h2>Messages</h2>
+    <ul></ul>
+
+</section>
 <footer>
     <p>&copy; 2023 ButterSnow. All rights reserved.</p>
 </footer>
 </section>
-<footer></footer>
 <script src="js/index.js"></script>
+
+<img src="icon.png" alt="elementary school library" width="300" height="300"> 
 </body>
 </html>
 
