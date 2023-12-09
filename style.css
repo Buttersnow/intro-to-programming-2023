@@ -1,3 +1,6 @@
+
+
+
 h1 {
     color: rgb(26, 0, 128);
     text-align: center;
@@ -64,7 +67,6 @@ img {
     border-radius: 18px;
     display: block;
     width: auto;
-    position: absolute;
     top: 160px;
     left: 70%;
     box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.3);
