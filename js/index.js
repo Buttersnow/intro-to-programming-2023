@@ -42,7 +42,7 @@ messageForm.addEventListener('submit', function(event) {
   `;
 
   const removeButton = document.createElement('button');
-  removeButton.innerText = 'remove';
+  removeButton.innerText = 'Remove';
   removeButton.type = 'button';
 
   removeButton.addEventListener('click', function() {
