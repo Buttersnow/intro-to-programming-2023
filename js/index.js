@@ -55,7 +55,34 @@ messageForm.addEventListener('submit', function(event) {
   messageList.appendChild(newMessage);
 });
 
+//AJAX request:: lessson 6.1
 
 
+  const githubRequest = new XMLHttpRequest();
+  const link = "https://api.github.com/users/Buttersnow/repos";
+  githubRequest.open('GET', link);
+ console.log(githubRequest.responseText);
+  githubRequest.send();
 
 
+githubRequest.addEventListener('load', function(event) {
+  const repositories = JSON.parse(githubRequest.response);
+  console.log(repositories, repositories[0]);
+
+  const projectSection = document.getElementById('projects');
+  const projectList = projectSection.querySelector('ul');
+
+  for (var i = 0; i < repositories.length; i++) {
+    const project = document.createElement('li');
+    
+    project.innerText = `${repositories[i].name} \n
+     Description: ${repositories[i].description} \n
+     ${repositories[i].updated_at} \n
+    `;
+    
+        projectList.appendChild(project);
+  }
+});
+githubRequest.send(open);
+
+ 
