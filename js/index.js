@@ -58,7 +58,7 @@ messageForm.addEventListener('submit', function(event) {
 //AJAX request:: lessson 6.1
 
 
-  const githubRequest = new XMLHttpRequest();
+/*  const githubRequest = new XMLHttpRequest();
   const link = "https://api.github.com/users/Buttersnow/repos";
   githubRequest.open('GET', link);
  console.log(githubRequest.responseText);
@@ -83,6 +83,32 @@ githubRequest.addEventListener('load', function(event) {
         projectList.appendChild(project);
   }
 });
-githubRequest.send(open);
+githubRequest.send(open); */
 
- 
+ // Fetch API : Assignment 6.2
+ const url = "https://api.github.com/users/Buttersnow/repos";
+
+fetch(url)
+  .then(response => response.json())
+
+  .then(repositories => {
+    console.log(repositories, repositories[0]);
+
+    const projectSection = document.getElementById('projects');
+    const projectList = projectSection.querySelector('ul');
+
+    for (let i = 0; i < repositories.length; i++) {
+      const project = document.createElement('li');
+      
+      project.innerText = `${repositories[i].name} \n
+        Description: ${repositories[i].description} \n
+        
+        ${repositories[i].updated_at} \n
+      `;
+      
+      projectList.appendChild(project);
+    }
+  })
+  .catch(err => console.error(err));
+  // I could locate the date object in the JSON file.
+  //I used updated_at object instead (for loop above)
